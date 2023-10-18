@@ -1,0 +1,262 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Club {
+public:
+    string name;
+    string description;
+
+    // Constructor
+    Club(const string& name, const string& description) : name(name), description(description) {}
+
+void displayClubInfo() {
+        cout << "Club Name: " << name << endl;
+        cout << "Description: " << description << endl;
+    }
+
+      // Menu-driven function for media, documentation, photography, and events
+    void menu() {
+        int choice;
+        while (true) {
+            cout << "Choose an action for " << name << ":" << endl;
+            cout << "1. Display Club Information" << endl;
+            cout << "2. Media" << endl;
+            cout << "3. Documentation" << endl;
+            cout << "4. Photography" << endl;
+            cout << "5. Events" << endl;
+            cout << "6. Link" << endl;
+            cout << "7. Go back to main menu" << endl;
+            cout << "Enter your choice: ";
+            cin >> choice;
+
+            switch (choice) {
+                case 1:
+                    displayClubInfo();
+                    break;
+                case 2:
+                    media();
+                    break;
+                case 3:
+                    documentation();
+                    break;
+                case 4:
+                    photography();
+                    break;
+                case 5:
+                    events();
+                    break;
+                case 6:
+                    link();
+                    break;
+                case 7:
+                    return;
+                default:
+                    cout << "Invalid choice. Please select a valid option." << endl;
+            }
+        }
+    }
+     virtual void media() {}
+    virtual void documentation() {}
+    virtual void photography() {}
+    virtual void events() {}
+    virtual void link() {}
+
+};
+
+// Child class "Music"
+class MusicClub : public Club {
+public:
+    MusicClub(const string& name, const string& description) : Club(name, description) {}
+    void media() override {
+        cout << "This club handles media related activities for Music Club." << endl;
+    }
+
+    void documentation() override {
+        cout << "This club is responsible for documentation tasks for Music Club." << endl;
+    }
+
+    void photography() override {
+        cout << "This club deals with photography and visual content for Music Club." << endl;
+    }
+
+    void events() override {
+        cout << "This club organizes events and activities for Music Club." << endl;
+    }
+    void link() override {
+        cout << "Link => https://linktr.ee/symbiosismusicsociety?utm_source=linktree_profile_share " << endl;
+    }
+};
+
+class DanceClub : public Club {
+public:
+    DanceClub(const string& name, const string& description) : Club(name, description) {}
+    void media() override {
+        cout << "This club handles media related activities for Dance Club." << endl;
+    }
+
+    void documentation() override {
+        cout << "This club is responsible for documentation tasks for Dance Club." << endl;
+    }
+
+    void photography() override {
+        cout << "This club deals with photography and visual content for Dance Club." << endl;
+    }
+
+    void events() override {
+        cout << "This club organizes events and activities for Dance Club." << endl;
+    }
+    void link() override {
+        cout << "Link => https://docs.google.com/forms/d/e/1FAIpQLSffXwnJ0xbHD-DfkYfLnQPe7ijHdpV-7sQojgPH0Tt0CzX9aA/viewform " << endl;
+    }
+};
+
+class SportsClub : public Club {
+public:
+    SportsClub(const string& name, const string& description) : Club(name, description) {}
+    void media() override {
+        cout << "This club handles media related activities for Sports Club." << endl;
+    }
+
+    void documentation() override {
+        cout << "This club is responsible for documentation tasks for Sports Club." << endl;
+    }
+
+    void photography() override {
+        cout << "This club deals with photography and visual content for Sports Club." << endl;
+    }
+
+    void events() override {
+        cout << "This club organizes events and activities for Sports Club." << endl;
+    }
+};
+
+class DramaClub : public Club {
+public:
+    DramaClub(const string& name, const string& description) : Club(name, description) {}
+    void media() override {
+        cout << "This club handles media related activities for Drama Club." << endl;
+    }
+
+    void documentation() override {
+        cout << "This club is responsible for documentation tasks for Drama Club." << endl;
+    }
+
+    void photography() override {
+        cout << "This club deals with photography and visual content for Drama Club." << endl;
+    }
+
+    void events() override {
+        cout << "This club organizes events and activities for Drama Club." << endl;
+    }
+    void link() override {
+        cout << "Link => https://docs.google.com/forms/d/e/1FAIpQLSckrknUI_ynKSxEWeGy3Ss_p__GOSjcxXXqE8RQ_2Wnwsskvw/viewform " << endl;
+    }
+    
+};
+
+class CodingClub : public Club {
+public:
+    CodingClub(const string& name, const string& description) : Club(name, description) {}
+    void media() override {
+        cout << "This club handles media related activities for Coding Club." << endl;
+    }
+
+    void documentation() override {
+        cout << "This club is responsible for documentation tasks for Coding Club." << endl;
+    }
+
+    void photography() override {
+        cout << "This club deals with photography and visual content for Coding Club." << endl;
+    }
+
+    void events() override {
+        cout << "This club organizes events and activities for the Coding Club." << endl;
+    }
+    void link() override {
+        cout << "Link => https://instagram.com/codex_sit?igshid=MzRlODBiNWFlZA== " << endl;
+    }
+};
+
+class ArtClub : public Club {
+public:
+    ArtClub(const string& name, const string& description) : Club(name, description) {}
+    void media() override {
+        cout << "This club handles media related activities for Media department of the Club." << endl;
+    }
+
+    void documentation() override {
+        cout << "This club is responsible for documentation tasks for Documentation department of the Club." << endl;
+    }
+
+    void photography() override {
+        cout << "This club deals with photography and visual content for Photography department of the Club. Club." << endl;
+    }
+
+    void events() override {
+        cout << "This club organizes events and activities for Events department of the Club." << endl;
+    }
+    void link() override {
+        cout << "Link =>  https://linktr.ee/BrushesToPixels?utm_source=linktree_ " << endl;
+    }
+};
+
+int main() {
+    int choice;
+
+    while (true) {
+        cout << "Choose a SIT Club to learn more about:" << endl;
+        cout << "1. Music Club" << endl;
+        cout << "2. Dance Club" << endl;
+        cout << "3. Sports Club" << endl;
+        cout << "4. Drama Club" << endl;
+        cout << "5. Coding Club" << endl;
+        cout << "6. Art Club" << endl;
+        cout << "7. Quit" << endl;
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        if (choice == 7) {
+            break; // Exit the program if the user chooses to quit
+        }
+
+        Club* club = nullptr; // Initialize to nullptr
+
+        switch (choice) {
+            case 1:
+                club = new MusicClub("Music Club", "Join the Music Club to explore your musical talents.");
+                break;
+
+            case 2:
+                club = new DanceClub("Dance Club", "A club for those who love to express themselves through the art of dance.");
+                break;
+
+            case 3:
+                club = new SportsClub("Sports Club", "A club for sports lovers to stay active and compete in various games.");
+                break;
+
+            case 4:
+                club = new DramaClub("Drama Club", "Discover your acting talents in the Drama Club.");
+                break;
+
+            case 5:
+                club = new CodingClub("Coding Club", "Enhance your programming skills and participate in coding competitions.");
+                break;
+
+            case 6:
+                club = new ArtClub("Art Club", "Unleash your artistic talents and create beautiful artworks.");
+                break;
+
+            default:
+                cout << "Invalid choice. Please select a valid option." << endl;
+                continue;
+        }
+
+        club->menu();
+
+        delete club;
+    }
+
+    return 0;
+}
